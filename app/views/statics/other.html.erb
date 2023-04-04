@@ -1,3 +1,14 @@
 <div>
   <p>My new view in Statics</p>
+
+  <p>Params from view our.html.erb</p>
+  <%= params.inspect %>
+  <p>ID: <%= params['id'] %></p>
+  <p>PAG: <%= params[:pag] %></p>
+
+  <br>
+  <p>Params from view statics_controller.rb in accion other</p>
+  <%= params.inspect %>
+  <p>ID: <%= @id %></p>
+  <p>PAG: <%= @pag %></p>
 </div>

@@ -9,5 +9,7 @@ class StaticsController < ApplicationController
   end
 
   def other
+    @id = params[:id]
+    @pag = params[:pag]
   end
 end
