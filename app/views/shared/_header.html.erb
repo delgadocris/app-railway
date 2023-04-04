@@ -1,0 +1,12 @@
+<table class="container mx-auto mt-28 px-10 flex">
+  <tr>
+    <td><%= link_to 'Articles', articles_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %></td>
+    <td><%= link_to 'Contact', statics_contact_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %></td>
+    <td>
+    <%= link_to 'Other', {controller: 'statics', action: 'other', id: 3, pag: 1},
+                          class: 'rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium',
+                          target: '_blank'
+    %>
+    </td>
+  </tr>
+</table>

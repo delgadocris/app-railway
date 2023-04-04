@@ -1,3 +1,4 @@
+<% provide(:title, "Our") %>
 <div>
   <h1 class="font-bold text-4xl">Ours</h1>
 
@@ -21,16 +22,4 @@
   <% # Show instance variables from controller to view @var %>
   <%= "Controllers said: #{@message}" %>
 
-<table>
-  <tr>
-    <td><%= link_to 'Contact', statics_contact_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %></td>
-    <td>
-    <%= link_to 'Other', {controller: 'statics', action: 'other', id: 3, pag: 1},
-                          class: 'rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium',
-                          target: '_blank'
-    %>
-    </td>
-
-  </tr>
-</table>
 </div>
