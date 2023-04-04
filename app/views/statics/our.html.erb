@@ -1,4 +1,30 @@
 <div>
-  <h1 class="font-bold text-4xl">Statics#our</h1>
-  <p>Find me in app/views/statics/our.html.erb</p>
+  <h1 class="font-bold text-4xl">Ours</h1>
+
+  <% # Embeded ruby code inside html %>
+  <%= 1+1 %>
+
+  <br>
+  <% 5.times do |x| %>
+    <%= x %>
+  <% end %>
+  <br>
+  
+  <br>
+  <% # Show array instance variables from controller to view %>
+  <%= "Arrays Users" %>
+  <%@users.each do |x| %>
+    <li> <%= x %> </li>
+  <% end %>
+
+  <br>
+  <% # Show instance variables from controller to view @var %>
+  <%= "Controllers said: #{@message}" %>
+
+<table>
+  <tr>
+    <td><%= link_to 'Contact', statics_contact_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %></td>
+    <td><%= link_to 'Other', statics_other_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %></td>
+  </tr>
+</table>
 </div>
