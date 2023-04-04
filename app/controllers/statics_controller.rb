@@ -4,4 +4,7 @@ class StaticsController < ApplicationController
 
   def our
   end
+
+  def other
+  end
 end
