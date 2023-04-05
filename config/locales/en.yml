@@ -11,6 +11,14 @@ en:
     article:
       title: "Title:"
       content: "Content:"
+  authors:
+    index_author: "Authors"
+    new_author: "New author"
+    edit_author: "Edit author"
+    show_author: "Show author"
+    author:
+      name: 'Name:'
+      email: 'Email:'
   common:
     back: "Back"
     new: "New"

@@ -11,6 +11,14 @@ es:
     article:
       title: "Título:"
       content: "Contenido:"
+  authors:
+    index_author: "Autores"
+    new_author: "Nuevo autor"
+    edit_author: "Editar autor"
+    show_author: "Mostrar autor"
+    author:
+      name: 'Nombre:'
+      email: 'Correo:'
   common:
     back: "Regresar"
     new: "Nuevo"

@@ -1,0 +1,15 @@
+| <div id="
+= dom_id author
+| "> 
+p.my-5
+  strong.block.font-medium.mb-1
+    = t('.name')
+  = author.name
+p.my-5
+  strong.block.font-medium.mb-1
+    = t('.email')
+  = author.email
+- if action_name != "show"
+  = link_to t('common.show'), author, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium"
+  = link_to t('common.edit'), edit_author_path(author), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium"
+  hr.mt-6
