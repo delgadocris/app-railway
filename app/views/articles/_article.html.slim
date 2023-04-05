@@ -1,0 +1,15 @@
+| <div id="
+= dom_id article
+| "> 
+p.my-5
+  strong.block.font-medium.mb-1
+    | Titulo:
+  = article.title
+p.my-5
+  strong.block.font-medium.mb-1
+    | Content:
+  = article.content
+- if action_name != "show"
+  = link_to "Show this article", article, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium"
+  = link_to 'Edit this article', edit_article_path(article), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium"
+  hr.mt-6
