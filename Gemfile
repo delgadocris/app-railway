@@ -30,8 +30,18 @@ gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
 gem "redis", "~> 4.0"
 
+# Use slim
 gem "slim-rails"
+
+# Convert html to slim
 gem 'html2slim'
+
+# Extract plain Strings from .slim views and Rails controllers to replace them with I18n's t() method.
+gem 'slimkeyfy', '~> 0.1'
+
+# Detects language and translation patterns are done automatically
+gem 'rails-i18n'
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 

@@ -1,0 +1,24 @@
+es:
+  hello: "Hola Mundo"
+  articles:
+    index_article: "Articulos"
+    new_article: "Nuevo articulo"
+    edit_article: "Editar articulo"
+    show_article: "Mostrar articulo"
+    form:
+      title: "Título:"
+      content: "Contenido:"
+    article:
+      title: "Título:"
+      content: "Contenido:"
+  common:
+    back: "Regresar"
+    new: "Nuevo"
+    destroy: "Eliminar"
+    edit: "Editar"
+    show: "Mostrar"
+    save: "Guardar"
+  message:
+    success_edit: "El articulo fue actualizado exitosamente."
+    success_destroy: "El articulo fue eliminado exitosamente."
+    success_create: "El articulo fue creado exitosamente."

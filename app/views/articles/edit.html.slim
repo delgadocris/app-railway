@@ -1,7 +1,6 @@
-- provide(:title, 'Articles')
+- provide(:title, t('articles.edit_article'))
 .mx-auto.md:w-2/3.w-full
-  h1.font-bold.text-4xl
-    | Editing article
+  h1.font-bold.text-4xl =t('articles.edit_article')
   = render "form", article: @article
-  = link_to "Show this article", @article, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium"
-  = link_to "Back to articles", articles_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium"
+  = link_to t('common.show'), @article, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium"
+  = link_to t('common.back'), articles_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium"
