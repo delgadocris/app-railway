@@ -37,10 +37,15 @@ gem "slim-rails"
 gem 'html2slim'
 
 # Extract plain Strings from .slim views and Rails controllers to replace them with I18n's t() method.
-gem 'slimkeyfy', '~> 0.1'
+gem 'slimkeyfy'
 
 # Detects language and translation patterns are done automatically
 gem 'rails-i18n'
+
+gem 'net-http'
+gem 'net-smtp'
+gem 'net-imap'
+gem 'uri', '0.10.0'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"

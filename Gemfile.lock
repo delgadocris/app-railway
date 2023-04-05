@@ -134,6 +134,8 @@ GEM
     minitest (5.18.0)
     msgpack (1.6.1)
     multi_xml (0.6.0)
+    net-http (0.3.2)
+      uri
     net-imap (0.3.4)
       date
       net-protocol
@@ -244,6 +246,7 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    uri (0.10.0)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -278,6 +281,9 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   jquery-rails
+  net-http
+  net-imap
+  net-smtp
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.3)
@@ -286,12 +292,13 @@ DEPENDENCIES
   sassc-rails (>= 2.1.0)
   selenium-webdriver
   slim-rails
-  slimkeyfy (~> 0.1)
+  slimkeyfy
   sprockets-rails
   stimulus-rails
   tailwindcss-rails (~> 2.0)
   turbo-rails
   tzinfo-data
+  uri (= 0.10.0)
   web-console
   webdrivers
 
