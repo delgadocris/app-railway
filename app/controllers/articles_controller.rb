@@ -1,9 +1,10 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[ show edit update destroy ]
+  before_action :set_authors, only: %i[ new edit ]
 
   # GET /articles or /articles.json
   def index
-    @articles = Article.all
+    @articles = Article.all.order("created_at")
   end
 
   # GET /articles/1 or /articles/1.json
@@ -25,7 +26,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to article_url(@article), notice: t('message.success_create') }
+        format.html { redirect_to article_url(@article), notice: t('message.success_create', attribute: t('articles.article.one')) }
         format.json { render :show, status: :created, location: @article }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +39,7 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to article_url(@article), notice: t('message.success_edit') }
+        format.html { redirect_to article_url(@article), notice: t('message.success_edit', attribute: t('articles.article.one')) }
         format.json { render :show, status: :ok, location: @article }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +53,7 @@ class ArticlesController < ApplicationController
     @article.destroy
 
     respond_to do |format|
-      format.html { redirect_to articles_url, notice: t('message.success_destroy') }
+      format.html { redirect_to articles_url, notice: t('message.success_destroy', attribute: t('articles.article.one')) }
       format.json { head :no_content }
     end
   end
@@ -63,8 +64,12 @@ class ArticlesController < ApplicationController
       @article = Article.find(params[:id])
     end
 
+    def set_authors
+      @authors = Author.all.pluck(:name, :id)
+    end
+
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:title, :content)
+      params.require(:article).permit(:title, :content, :author_id)
     end
 end

@@ -9,6 +9,9 @@ en:
       title: "Title:"
       content: "Content:"
     article:
+      one: "Article"
+      other: "Articles"
+      created_at: "Created At:"
       title: "Title:"
       content: "Content:"
   authors:
@@ -17,6 +20,9 @@ en:
     edit_author: "Edit author"
     show_author: "Show author"
     author:
+      one: "Author"
+      other: "Authors"
+      created_at: "Created At:"
       name: 'Name:'
       email: 'Email:'
   common:
@@ -27,6 +33,12 @@ en:
     show: "Show"
     save: "Save"
   message:
-    success_edit: "Article was successfully updated."
-    success_destroy: "Article was successfully destroyed."
-    success_create: "Article was successfully created."
+    error:
+      one: "Error"
+      other: "Errors"
+      prohibited: "Prohibited this %{attribute} from being saved:"
+    success_edit: "%{attribute} was successfully updated."
+    success_destroy: "%{attribute} was successfully destroyed."
+    success_create: "%{attribute} was successfully created."
+    confirm_destroy: "Are you sure do you want to destroy the %{attribute}?"
+    select: "Select an option"

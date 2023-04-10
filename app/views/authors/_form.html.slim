@@ -2,17 +2,17 @@
   - if author.errors.any?
     #error_explanation.bg-red-50.text-red-500.px-3.py-2.font-medium.rounded-lg.mt-3
       h2
-        = pluralize(author.errors.count, "error")
-        |  prohibited this author from being saved:
+        = t("message.error", count: author.errors.count) + " - "
+        = t('message.error.prohibited', attribute: t('authors.author.one'))
       ul
         - author.errors.each do |error|
           li
             = error.full_message
   .my-5
     = form.label :name
-    = form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"
+    = form.text_field :name, class: "form-control"
   .my-5
     = form.label :email
-    = form.text_field :email, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"
+    = form.text_field :email, class: "form-control"
   .inline
     = form.submit t('common.save'), class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer"
