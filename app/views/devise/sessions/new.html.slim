@@ -1,0 +1,17 @@
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  h2 = t('authors.log_in')
+  .field
+    = f.label t('devise.registrations.email')
+    br
+    = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control"
+  .field
+    = f.label t('devise.registrations.password')
+    br
+    = f.password_field :password, autocomplete: "current-password", class: "form-control"
+  - if devise_mapping.rememberable?
+      .field
+        = f.check_box :remember_me
+        = f.label t('devise.registrations.remember_me')
+  .actions
+    = f.submit t('common.log_in'), class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer"
+= render "devise/shared/links"

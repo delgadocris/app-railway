@@ -1,0 +1,30 @@
+= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+  = render "devise/shared/error_messages", resource: resource
+  h2 =t('authors.edit_author')
+  .my-5
+    = f.label t('devise.registrations.email')
+    br
+    = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control"
+  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+    div = t('devise.registrations.waiting_confirmation')
+      = resource.unconfirmed_email
+  .my-5
+    = f.label t('devise.registrations.password')
+    i = t('devise.registrations.password_white')
+    br
+    = f.password_field :password, autocomplete: "new-password", class: "form-control"
+  .my-5
+    = f.label t('devise.registrations.password_confirmation')
+    i = t('devise.registrations.password_minimum', minimum: @minimum_password_length )
+    br
+    = f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control"
+  .my-5
+    = f.label t('devise.registrations.current_password')
+    i = t('devise.registrations.password_change')
+    br
+    = f.password_field :current_password, autocomplete: "current-password", class: "form-control"
+  .actions
+    = f.submit t('common.edit'), class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer"
+  h2= t('authors.cancel_author')
+  div
+    = button_to t('common.cancel_account'), registration_path(resource_name), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium", data: { 'turbo-method': :delete, 'turbo-confirm': t('message.confirm_destroy', attribute: t('authors.author.one')) }

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :authors
   get 'statics/contact'
   get 'statics/our'
   get 'statics/other'
