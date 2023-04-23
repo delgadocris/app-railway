@@ -83,6 +83,11 @@ en:
         subject: "Email Changed"
       password_change:
         subject: "Password Changed"
+      reset_password:
+        hello: "Hello %{email}!"
+        text_one: "Someone has requested a link to change your password. You can do this through the link below."
+        text_two: "If you didn't request this, please ignore this email."
+        text_three: "Your password won't change until you access the link above and create a new one."
     omniauth_callbacks:
       failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
       success: "Successfully authenticated from %{kind} account."

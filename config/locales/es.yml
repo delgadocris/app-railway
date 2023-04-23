@@ -83,6 +83,11 @@ es:
         subject: "Correo electrónico cambiado"
       password_change:
         subject: "Contraseña cambiada"
+      reset_password:
+        hello: "Hola %{email}!"
+        text_one: "Alguien ha solicitado un enlace para cambiar su contraseña. Puedes hacerlo a través del siguiente enlace."
+        text_two: "Si no solicitó esto, ignore este correo electrónico."
+        text_three: "Su contraseña no cambiará hasta que acceda al enlace anterior y cree una nueva."        
     omniauth_callbacks:
       failure: "No se pudo autenticar desde %{kind} porque \"%{reason}\"."
       success: "Autenticado con éxito desde %{kind} cuenta."
