@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_author!, except: %i[ index show ]
   before_action :set_article, only: %i[ show edit update destroy ]
   before_action :set_authors, only: %i[ new edit ]
+  before_action :correct_author, only: %i[ edit update destroy ]
 
   # GET /articles or /articles.json
   def index
@@ -13,7 +15,8 @@ class ArticlesController < ApplicationController
 
   # GET /articles/new
   def new
-    @article = Article.new
+    #@article = Article.new
+    @article = current_author.articles.build
   end
 
   # GET /articles/1/edit
@@ -22,8 +25,8 @@ class ArticlesController < ApplicationController
 
   # POST /articles or /articles.json
   def create
-    @article = Article.new(article_params)
-
+    #@article = Article.new(article_params)
+    @article = current_author.articles.build(article_params)
     respond_to do |format|
       if @article.save
         format.html { redirect_to article_url(@article), notice: t('message.success_create', attribute: t('articles.article.one')) }
@@ -71,5 +74,10 @@ class ArticlesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def article_params
       params.require(:article).permit(:title, :content, :author_id)
+    end
+
+    def correct_author
+      @article = current_author.articles.find_by(id: params[:id])
+      redirect_to articles_path, notice: t('message.not_authorized') if @article.nil?
     end
 end

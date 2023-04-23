@@ -56,6 +56,7 @@ es:
     success_create: "El %{attribute} fue creado exitosamente."
     confirm_destroy: "¿Estás seguro que deseas eliminar el %{attribute}?"
     select: 'Seleccione una opción'
+    not_authorized: "Autor no autorizado para modificar este artículo"
   devise:
     confirmations:
       confirmed: "Su dirección de correo electrónico ha sido confirmada con éxito."

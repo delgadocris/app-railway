@@ -3,6 +3,7 @@
   .mx-auto
     h1.font-bold.text-4xl =t('articles.show_article')
     = render @article
+  - if author_signed_in?
     = link_to t('common.edit'), edit_article_path(@article), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium"
     .inline-block.ml-2
       = button_to t('common.destroy'), article_path(@article), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium", data: { 'turbo-method': :delete, 'turbo-confirm': t('message.confirm_destroy', attribute: t('articles.article.one')) }

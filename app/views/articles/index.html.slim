@@ -2,6 +2,7 @@
 .w-full
   .flex.justify-between.items-center
     h1.font-bold.text-4xl =t('articles.index_article')
-    = link_to t('common.new'), new_article_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium"
+    - if author_signed_in?
+      = link_to t('common.new'), new_article_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium"
   #articles.min-w-full
     = render @articles
