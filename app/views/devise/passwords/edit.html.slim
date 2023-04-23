@@ -1,0 +1,21 @@
+h2 =t('authors.change_password')
+= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
+  = render "devise/shared/error_messages", resource: resource
+  = f.hidden_field :reset_password_token
+  .field
+    = f.label :password t('devise.passwords.new_password')
+    br
+    - if @minimum_password_length
+      em
+        | (
+        = @minimum_password_length
+        |  characters minimum)
+      br
+    = f.password_field :password, autofocus: true, autocomplete: "new-password"
+  .field
+    = f.label :password_confirmation t('devise.passwords.password_confirmation')
+    br
+    = f.password_field :password_confirmation, autocomplete: "new-password"
+  .actions
+    = f.submit t('common.change_password'), class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer"
+= render "devise/shared/links"

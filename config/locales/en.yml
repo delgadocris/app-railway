@@ -1,5 +1,6 @@
 en:
   hello: "Hello world"
+  title_app: "My Blog!"
   articles:
     index_article: "Articles"
     new_article: "New article"
@@ -20,6 +21,8 @@ en:
     edit_author: "Edit author"
     show_author: "Show author"
     cancel_author: "Cancel author"
+    forgot_password: "Forgot your password?"
+    change_password: "Change your password"
     log_in: "Log in"
     log_out: "Log out"
     join: "Join"
@@ -41,6 +44,8 @@ en:
     sign_up: "Sign up"
     log_in: "Log in"
     forgot: "Forgot your password?"
+    reset_password: "Send me reset password instructions"
+    change_password: "Change my password"
   message:
     error:
       one: "Error"
@@ -81,6 +86,9 @@ en:
       failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
       success: "Successfully authenticated from %{kind} account."
     passwords:
+      email: "Email:"
+      new_password: "New password"
+      password_confirmation: "Confirm new password"
       no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
       send_instructions: "You will receive an email with instructions on how to reset your password in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."

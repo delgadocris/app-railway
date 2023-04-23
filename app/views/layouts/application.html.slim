@@ -10,7 +10,9 @@ html
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
   body
-    = render 'shared/header'
+    h1.container.mx-auto.mt-28.px-5.font-bold = t('title_app')
+    = render 'shared/header' if author_signed_in?
+    = render 'shared/init' unless author_signed_in?
 
     main.container.mx-auto.mt-28.px-5
       - if notice.present?

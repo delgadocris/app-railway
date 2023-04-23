@@ -1,5 +1,6 @@
 es:
   hello: "Hola Mundo"
+  title_app: "Mi Blog!"
   articles:
     index_article: "Artículos"
     new_article: "Nuevo artículo"
@@ -20,9 +21,11 @@ es:
     edit_author: "Editar autor"
     show_author: "Mostrar autor"
     cancel_author: "Cancelar autor"
+    forgot_password: "¿Olvidaste tu contraseña?"
+    change_password: "Cambiar tu contraseña"
     log_in: "Iniciar Sesión"
     log_out: "Cerrar Sesión"
-    join: "Unirse"
+    join: "Inscribirse"
     sign_up: "Inscribirse"
     author:
       one: "Autor"
@@ -41,6 +44,8 @@ es:
     sign_up: "Inscribirse"
     log_in: "Iniciar sesión"
     forgot: "¿Olvidaste la contraseña?"
+    reset_password: "Enviame instrucciones para restaurar la contraseña"
+    change_password: "Cambiar mi contraseña"
   message:
     error:
       one: "Error"
@@ -81,6 +86,9 @@ es:
       failure: "No se pudo autenticar desde %{kind} porque \"%{reason}\"."
       success: "Autenticado con éxito desde %{kind} cuenta."
     passwords:
+      email: "Correo electrónico:"
+      new_password: "Nueva contraseña:"
+      password_confirmation: "Confirmare nueva contraseña"
       no_token: "No puede acceder a esta página sin recibir un correo electrónico de restablecimiento de contraseña. Si proviene de un correo electrónico de restablecimiento de contraseña, asegúrese de haber utilizado la URL completa proporcionada."
       send_instructions: "Recibirá un correo electrónico con instrucciones sobre cómo restablecer su contraseña en unos minutos."
       send_paranoid_instructions: "Si su dirección de correo electrónico existe en nuestra base de datos, recibirá un enlace de recuperación de contraseña en su dirección de correo electrónico en unos minutos."
