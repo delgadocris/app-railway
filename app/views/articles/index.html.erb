@@ -1,12 +1,12 @@
 <% provide(:title, t('articles.index_article')) %>
 <div class="w-full">
 
-  <% if author_signed_in? %>
-    <div class="flex justify-between items-center">
-      <h1 class="font-bold text-4xl"><%= t('articles.index_article') %> </h1>
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl"><%= t('articles.index_article') %> </h1>
+    <% if author_signed_in? %>
       <%= link_to t('common.new'), new_article_path, class: "btn btn-warning" %>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 
   <table class="table" id="dom_id article">
     <thead>
