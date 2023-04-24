@@ -2,5 +2,7 @@
 .mx-auto.md:w-2/3.w-full
   h1.font-bold.text-4xl =t('authors.edit_author')
   = render "form", author: @author
-  = link_to t('common.show'), @author, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium"
-  = link_to t('common.back'), authors_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium"
+  .inline-block.ml-2
+  = link_to t('common.show'), @author, class: "btn btn-success"
+  .inline-block.ml-2
+  = link_to t('common.back'), authors_path, class: "btn btn-warning"

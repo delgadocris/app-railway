@@ -1,0 +1,26 @@
+<% provide(:title, t('authors.index_author')) %>
+<div class="w-full">
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl"><%= t('authors.index_author') %> </h1>
+  </div>
+  <table class="table" id="dom_id author">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col"><%= t('authors.author.created_at') %></th>
+        <th scope="col"><%= t('authors.author.name') %></th>
+        <th scope="col"><%= t('authors.author.email') %></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <div id="authors" class="min-w-full">
+        <%= render @authors %>
+      </div>
+    </tbody>
+  </table>
+</div>
+
+<%= will_paginate(@authors, next_label: inline_svg('arrow_circle_right', class: "paginate-button"), previous_label: inline_svg('arrow_circle_left', class: "paginate-button")) %>

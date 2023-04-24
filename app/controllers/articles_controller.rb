@@ -1,12 +1,12 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_author!, except: %i[ index show ]
   before_action :set_article, only: %i[ show edit update destroy ]
-  before_action :set_authors, only: %i[ new edit ]
+  before_action :set_authors, only: %i[ new edit create]
   before_action :correct_author, only: %i[ edit update destroy ]
 
   # GET /articles or /articles.json
   def index
-    @articles = Article.all.order("created_at").paginate(page: params[:page], per_page: 2)
+    @articles = Article.all.order("created_at").paginate(page: params[:page], per_page: 5)
   end
 
   # GET /articles/1 or /articles/1.json

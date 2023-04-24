@@ -1,0 +1,15 @@
+<div id="dom_id article">
+  <tr>
+    <td><%= article.id %></td>
+    <td><%= article.author.name %></td>
+    <td><%= article.created_at.strftime("%d/%m/%Y")%></td>
+    <td><%= article.title%></td>
+    <td><%= article.content.truncate(500)%></td>
+    <% if author_signed_in? && action_name != "show" %>
+      <td><%= link_to t('common.show'), article, class: "btn btn-success"%></td>
+      <td><%= link_to t('common.edit'), edit_article_path(article), class: "btn btn-info"%></td>
+      <td><%= link_to t('common.destroy'), article_path(article), method: :delete, class: "btn btn-danger", data: { 'turbo-method': :delete, 'turbo-confirm': t('message.confirm_destroy', attribute: t('articles.article.one')) }%></td>
+    <% end %>
+  </tr>
+</div>
+

@@ -1,0 +1,32 @@
+<% provide(:title, t('articles.index_article')) %>
+<div class="w-full">
+
+  <% if author_signed_in? %>
+    <div class="flex justify-between items-center">
+      <h1 class="font-bold text-4xl"><%= t('articles.index_article') %> </h1>
+      <%= link_to t('common.new'), new_article_path, class: "btn btn-warning" %>
+    </div>
+  <% end %>
+
+  <table class="table" id="dom_id article">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col"><%= t('articles.article.one') %></th>
+        <th scope="col"><%= t('articles.article.created_at') %></th>
+        <th scope="col"><%= t('articles.article.name') %></th>
+        <th scope="col"><%= t('articles.article.content') %></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <div id="articles" class="min-w-full">
+        <%= render @articles %>
+      </div>
+    </tbody>
+  </table>
+</div>
+
+<%= will_paginate(@articles, next_label: inline_svg('arrow_circle_right', class: "paginate-button"), previous_label: inline_svg('arrow_circle_left', class: "paginate-button")) %>

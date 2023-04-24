@@ -24,7 +24,7 @@
     br
     = f.password_field :current_password, autocomplete: "current-password", class: "form-control"
   .actions
-    = f.submit t('common.edit'), class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer"
+    = f.submit t('common.edit'), class: "btn btn-info"
   h2= t('authors.cancel_author')
   div
-    = button_to t('common.cancel_account'), registration_path(resource_name), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium", data: { 'turbo-method': :delete, 'turbo-confirm': t('message.confirm_destroy', attribute: t('authors.author.one')) }
+    = button_to t('common.cancel_account'), registration_path(resource_name), method: :delete, class: "btn btn-danger", data: { 'turbo-method': :delete, 'turbo-confirm': t('message.confirm_destroy', attribute: t('authors.author.one')) }

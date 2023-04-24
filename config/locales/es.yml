@@ -12,9 +12,9 @@ es:
     article:
       one: "Artículo"
       other: "Artículos"
-      created_at: "Creado:"
+      created_at: "Creado"
       title: "Título:"
-      content: "Contenido:"
+      content: "Contenido"
   authors:
     index_author: "Autores"
     new_author: "Nuevo autor"
@@ -30,9 +30,9 @@ es:
     author:
       one: "Autor"
       other: "Autores"
-      created_at: "Creado:"
-      name: 'Nombre:'
-      email: 'Correo electrónico:'
+      created_at: "Creado"
+      name: 'Nombre'
+      email: 'Correo electrónico'
   common:
     back: "Regresar"
     new: "Nuevo"
