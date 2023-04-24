@@ -10,7 +10,7 @@
             = error.full_message
   .my-5
     = form.label :author_id, t('authors.author.one')
-    = form.select :author_id, options_for_select(@authors, article.author_id), { prompt: t("message.select") }, { class: 'form-control', required: true }
+    = form.select :author_id, options_for_select(@authors, article.author_id), { prompt: t("message.select") }, { class: 'form-control', required: true, disabled: true}
   .my-5
     = form.label :title, t('.title')
     = form.text_field :title, class: "form-control"

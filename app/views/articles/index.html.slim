@@ -6,3 +6,4 @@
       = link_to t('common.new'), new_article_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium"
   #articles.min-w-full
     = render @articles
+= will_paginate(@articles, next_label: inline_svg('arrow_circle_right', class: "paginate-button"), previous_label: inline_svg('arrow_circle_left', class: "paginate-button"))
