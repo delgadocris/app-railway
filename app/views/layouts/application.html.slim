@@ -12,8 +12,7 @@ html
   body
     br
     h1.container.mx-auto.mt-28.px-5.font-bold = t('title_app')
-    = render 'shared/header' if author_signed_in?
-    = render 'shared/init' unless author_signed_in?
+    = render 'shared/header'
 
     main.container.mx-auto.mt-28.px-5
       - if notice.present?
