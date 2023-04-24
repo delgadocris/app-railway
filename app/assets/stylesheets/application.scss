@@ -1,3 +1,11 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.some-class {
+  display: block;
+  margin: 0 auto;
+  fill: #0b3fc3;
+  width: 5em;
+  height: 5em;
+}
