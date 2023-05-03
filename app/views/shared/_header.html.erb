@@ -8,11 +8,21 @@
         <li><%= link_to t('authors.author.other'), authors_path %></li>
         <li><%= link_to t('articles.article.other'), articles_path %></li>
         <li><%= link_to 'Contacto', statics_contact_path %></li>
-        <li><%= link_to t('authors.edit_author'), edit_author_registration_path %></li>
+        <%
+=begin%>
+ <li><%= link_to t('authors.edit_author'), edit_author_registration_path %></li> 
+<%
+=end%>
         <li><%= link_to t('authors.log_out'), destroy_author_session_path, method: :delete, data: { turbo_method: :delete, turbo_confirm: t('devise.sessions.sure_signed_out') } %></li>
       <% else %>
+        <li><%= link_to t('authors.author.other'), authors_path %></li>
+        <li><%= link_to t('articles.article.other'), articles_path %></li>
         <li><%= link_to t('authors.log_in'), new_author_session_path %></li>
-        <li><%= link_to t('authors.join'), new_author_registration_path %></li>
+<%
+=begin%>
+ <li><%= link_to t('authors.join'), new_author_registration_path %></li> 
+<%
+=end%>
       <% end %>
       </ul>
     </div>

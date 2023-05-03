@@ -57,6 +57,7 @@ en:
     confirm_destroy: "Are you sure do you want to destroy the %{attribute}?"
     select: "Select an option"
     not_authorized: "Author not authorized to edit this article"
+    not_found: "%{attribute} not found"
   devise:
     confirmations:
       confirmed: "Your email address has been successfully confirmed."

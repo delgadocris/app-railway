@@ -11,6 +11,12 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1 or /articles/1.json
   def show
+    if @article.nil?
+      respond_to do |format|
+        format.html { redirect_to authors_url, notice: t('message.not_found', attribute: t('articles.article.one')) }
+        format.json { head :no_content }
+      end
+    end
   end
 
   # GET /articles/new
@@ -65,6 +71,11 @@ class ArticlesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_article
       @article = Article.find(params[:id])
+    rescue StandardError => e
+      respond_to do |format|
+        format.html { redirect_to authors_url, notice: t('message.not_found', attribute: t('articles.article.one')) }
+        format.json { head :no_content }
+      end
     end
 
     def set_authors

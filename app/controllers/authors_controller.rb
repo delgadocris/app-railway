@@ -1,6 +1,6 @@
 class AuthorsController < ApplicationController
-  before_action :authenticate_author!, except: %i[ index show ]
-  before_action :set_author, only: %i[ show edit update destroy ]
+  before_action :authenticate_author!, except: %i[index show]
+  before_action :set_author, only: %i[show edit update destroy]
 
   # GET /authors or /authors.json
   def index
@@ -9,6 +9,12 @@ class AuthorsController < ApplicationController
 
   # GET /authors/1 or /authors/1.json
   def show
+    if @author.nil?
+      respond_to do |format|
+        format.html { redirect_to authors_url, notice: t('message.not_found', attribute: t('authors.author.one')) }
+        format.json { head :no_content }
+      end
+    end
   end
 
   # GET /authors/new
@@ -59,9 +65,14 @@ class AuthorsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_author
-      @author = Author.find(params[:id])
+      @author = Author.find_by(id: params[:id].try(:to_i))
+    rescue StandardError => e
+      respond_to do |format|
+        format.html { redirect_to authors_url, notice: t('message.not_found', attribute: t('authors.author.one')) }
+        format.json { head :no_content }
+      end
     end
 
     # Only allow a list of trusted parameters through.

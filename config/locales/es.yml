@@ -57,6 +57,7 @@ es:
     confirm_destroy: "¿Estás seguro que deseas eliminar el %{attribute}?"
     select: 'Seleccione una opción'
     not_authorized: "Autor no autorizado para modificar este artículo"
+    not_found: "%{attribute} no encontrado"
   devise:
     confirmations:
       confirmed: "Su dirección de correo electrónico ha sido confirmada con éxito."
